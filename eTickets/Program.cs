@@ -1,3 +1,6 @@
+using eTickets.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace eTickets
 {
     public class Program
@@ -5,6 +8,9 @@ namespace eTickets
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            var connString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connString)); 
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -17,7 +23,7 @@ namespace eTickets
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
-            }
+            }            
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -25,6 +31,9 @@ namespace eTickets
             app.UseRouting();
 
             app.UseAuthorization();
+
+            //Seed Database
+            AppDbInitializer.Seed(app);
 
             app.MapControllerRoute(
                 name: "default",
