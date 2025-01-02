@@ -10,11 +10,14 @@ namespace eTickets
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // Dbcontext configuration
             var connString = builder.Configuration.GetConnectionString("DefaultConnection");
-            builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connString)); 
+            builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connString));
 
+            //Services configuration
             builder.Services.AddScoped<IActorsService, ActorsService>();
             builder.Services.AddScoped<IProducersService, ProducersService>();
+            builder.Services.AddScoped<ICinemasService, CinemasService>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
