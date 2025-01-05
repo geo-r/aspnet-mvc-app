@@ -20,6 +20,7 @@ namespace eTickets
             builder.Services.AddScoped<IProducersService, ProducersService>();
             builder.Services.AddScoped<ICinemasService, CinemasService>();
             builder.Services.AddScoped<IMoviesService, MoviesService>();
+            builder.Services.AddScoped<IOrdersService, OrdersService>();
 
             builder.Services.AddSession();
 
