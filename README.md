@@ -40,6 +40,27 @@
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/username/eTicketsApp
+   cd eTicketsApp
+2. **Open the project in Visual Studio
+3. **Restore NuGet pacages by building the solution
+4. **Setup the Database
+   -open the appsettings.json file and configure the connection string for your SQL Server
+   -Run entity Framework migrations to create the database
+    Update-Database
+5. **Run the Application
+   -Press F5 in Visual Studio to build and run the application
+
+---
+
+## How to Use
+
+1.Register a new user account or log in with an existing one.
+2.Browse the list of available movies.
+3.Add movie tickets to your cart.
+4.Proceed to checkout to finalize your order.
+5.Admin users can manage content via the Management menu.
+
+   
 
 
     
