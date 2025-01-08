@@ -1,4 +1,4 @@
-# eTickets
+# eTickets 🎟️ 
 
 ## Overview
  The eTickets application is a full-stack web application
@@ -21,5 +21,12 @@
 - **Database**:  
   - Microsoft SQL Server with Entity Framework Core.  
 - **Tools**:  
-  - Visual Studio 2022, Git, and NuGet Packages.  
+  - Visual Studio 2022, Git, and NuGet Packages.
+
+ ---
+
+
+    
+ 
+    
 
