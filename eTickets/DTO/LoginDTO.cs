@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace eTickets.Data.ViewModels
+namespace eTickets.DTO
 {
-    public class LoginVM
+    public class LoginDTO
     {
         [Display(Name = "Email address")]
         [Required(ErrorMessage = "Email address is required")]

@@ -1,6 +1,5 @@
 ﻿using eTickets.Data;
 using eTickets.Data.Static;
-using eTickets.Data.ViewModels;
 using eTickets.DTO;
 using eTickets.Models;
 using Microsoft.AspNetCore.Identity;
@@ -32,31 +31,31 @@ namespace eTickets.Controllers
 
         public IActionResult Login()
             {
-                return View(new LoginVM());
+                return View(new LoginDTO());
             }
         [HttpPost]
-        public async Task<IActionResult> Login(LoginVM loginVM)
+        public async Task<IActionResult> Login(LoginDTO loginDTO)
         {
-            if (!ModelState.IsValid) return View(loginVM);
+            if (!ModelState.IsValid) return View(loginDTO);
 
-            var user = await _userManager.FindByEmailAsync(loginVM.EmailAddress);
+            var user = await _userManager.FindByEmailAsync(loginDTO.EmailAddress);
             if (user != null)
             {
-                var passwordCheck = await _userManager.CheckPasswordAsync(user, loginVM.Password);
+                var passwordCheck = await _userManager.CheckPasswordAsync(user, loginDTO.Password);
                 if (passwordCheck)
                 {
-                    var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
+                    var result = await _signInManager.PasswordSignInAsync(user, loginDTO.Password, false, false);
                     if (result.Succeeded)
                     {
                         return RedirectToAction("Index", "Movies");
                     }
                 }
                 TempData["Error"] = "Wrong credentials. Please, try again!";
-                return View(loginVM);
+                return View(loginDTO);
             }
 
             TempData["Error"] = "Wrong credentials. Please, try again!";
-            return View(loginVM);
+            return View(loginDTO);
         }
 
         public IActionResult Register() => View(new RegisterDTO());
