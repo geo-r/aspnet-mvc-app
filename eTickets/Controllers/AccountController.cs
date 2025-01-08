@@ -1,6 +1,7 @@
 ﻿using eTickets.Data;
 using eTickets.Data.Static;
 using eTickets.Data.ViewModels;
+using eTickets.DTO;
 using eTickets.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -8,8 +9,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace eTickets.Controllers
 {
-    
-        public class AccountController : Controller
+
+    public class AccountController : Controller
         {
             private readonly UserManager<ApplicationUser> _userManager;
             private readonly SignInManager<ApplicationUser> _signInManager;
@@ -58,26 +59,26 @@ namespace eTickets.Controllers
             return View(loginVM);
         }
 
-        public IActionResult Register() => View(new RegisterVM());
+        public IActionResult Register() => View(new RegisterDTO());
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterVM registerVM)
+        public async Task<IActionResult> Register(RegisterDTO registerDTO)
         {
-            if (!ModelState.IsValid) return View(registerVM);
+            if (!ModelState.IsValid) return View(registerDTO);
 
-            var user = await _userManager.FindByEmailAsync(registerVM.EmailAddress);
+            var user = await _userManager.FindByEmailAsync(registerDTO.EmailAddress);
             if (user != null)
             {
                 TempData["Error"] = "This email address is already in use";
-                return View(registerVM);
+                return View(registerDTO);
             }
 
             var newUser = new ApplicationUser()
             {
-                FullName = registerVM.FullName,
-                Email = registerVM.EmailAddress,
-                UserName = registerVM.EmailAddress
+                FullName = registerDTO.FullName,
+                Email = registerDTO.EmailAddress,
+                UserName = registerDTO.EmailAddress
             };
-            var newUserResponse = await _userManager.CreateAsync(newUser, registerVM.Password);
+            var newUserResponse = await _userManager.CreateAsync(newUser, registerDTO.Password);
 
             if (newUserResponse.Succeeded)
                 await _userManager.AddToRoleAsync(newUser, UserRoles.User);

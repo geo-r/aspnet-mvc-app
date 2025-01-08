@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace eTickets.Data.ViewModels
+namespace eTickets.DTO
 {
-    public class RegisterVM
+    public class RegisterDTO
     {
         [Display(Name = "Full name")]
         [Required(ErrorMessage = "Full name is required")]
