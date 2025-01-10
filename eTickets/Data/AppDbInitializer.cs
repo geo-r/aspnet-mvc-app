@@ -42,7 +42,7 @@ namespace eTickets.Data
                         new Cinema()
                         {
                             Name = "Cinema 4",
-                            Logo = "https://picsum.photos/262/261",
+                            Logo = "https://picsum.photos/262/263",
                             Description = "This is the description of the 4 cinema"
                         },
                         new Cinema()
