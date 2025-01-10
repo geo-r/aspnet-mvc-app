@@ -28,9 +28,9 @@
 
 ## Technical Requirements 🔧
 
-- **Visual Studio**: Version 2022 or later.
-- **SQL Server**: For database management.
-- **.NET Framework**: Version 6 or later.
+- **Visual Studio**: Version 2022.
+- **Microsoft SQL Server**: For database management.
+- **.NET Framework**: Version 8.
 - **Browser**: Google Chrome, Edge, or Firefox.
 
 ---
