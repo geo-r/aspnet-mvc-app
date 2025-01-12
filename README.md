@@ -1,7 +1,7 @@
-# eTickets 🎟️ 
+# eCinemas 🎟️ 
 
 ## Overview
- The eTickets application is a full-stack web application
+ The eCinemas application is a full-stack web application
  that allows users to browse and purchase movie tickets online.
  Built using ASP.NET MVC, this application offers a user-friendly
  interface for managing cinemas, movies, actors, and producers,
@@ -39,8 +39,8 @@
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/username/eTicketsApp
-   cd eTicketsApp
+   git clone https://github.com/username/eCineamasApp
+   cd eCinemasApp
 2. **Open the project in Visual Studio
 3. **Setup the Database
    -open the appsettings.json file and configure the connection string for your SQL Server
