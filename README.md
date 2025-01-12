@@ -42,11 +42,11 @@
    git clone https://github.com/username/eTicketsApp
    cd eTicketsApp
 2. **Open the project in Visual Studio
-3. **Restore NuGet pacages by building the solution
-4. **Setup the Database
+3. **Setup the Database
    -open the appsettings.json file and configure the connection string for your SQL Server
    -Run entity Framework migrations to create the database
     Update-Database
+4. **Restore NuGet pacages by building the solution
 5. **Run the Application
    -Press F5 in Visual Studio to build and run the application
 
