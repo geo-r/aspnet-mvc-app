@@ -64,8 +64,7 @@ namespace eCinemas
             app.UseAuthentication();
             app.UseAuthorization();
 
-
-            app.UseAuthorization();
+        
 
             //Seed Database
             AppDbInitializer.Seed(app);

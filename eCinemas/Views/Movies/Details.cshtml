@@ -56,10 +56,10 @@
                         <p class="card-text">
                             <b>Actors: </b>
                             <hr />
-                            <div class="row">
+                            <div class="d-flex flex-wrap justify-content-start">
                                 @foreach (var actor in Model.Actors_Movies)
                                 {
-                                    <div class="column text-center">
+                                    <div class="text-center m-2">
                                         <img class="border-info rounded-circle" src="@actor.Actor.ProfilePictureURL" style="max-width: 150px" />
                                         <br />
                                         <a asp-controller="Actors" asp-action="Details" asp-route-id="@actor.ActorId">@actor.Actor.FullName</a>
