@@ -12,7 +12,10 @@ namespace eCinemas.DTO
         [Required(ErrorMessage = "Email address is required")]
         public string? EmailAddress { get; set; }
 
-        [Required]        
+        [Required]
+        [RegularExpression(@"(?=.*?[A-Z])(?=.*?[a-z])(?=.*?\d)(?=.*?\W)^.{8,}$",
+            ErrorMessage = "Password must contain at least 8, one uppercase, one lowercase, " +
+            "one digit, and one special character")]
         [DataType(DataType.Password)]        
         public string? Password { get; set; }
 

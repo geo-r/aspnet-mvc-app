@@ -13,7 +13,7 @@ namespace eCinemas.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20250112112222_init")]
-    partial class init
+    partial class InitB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
