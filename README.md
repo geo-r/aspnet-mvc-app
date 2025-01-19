@@ -39,7 +39,7 @@
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/username/eCineamasApp
+   git clone https://github.com/username/eCinemasApp
    cd eCinemasApp
 2. **Open the project in Visual Studio
 3. **Setup the Database
